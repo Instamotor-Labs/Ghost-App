@@ -38,15 +38,20 @@ var configureGrunt = function (grunt) {
                 },
 
                 all: ['test/*_spec.js']
-            }
+            },
+            shell: {
+                'yarn-install': {
+                    command: 'yarn --network-concurrency 1 --no-progress --no-emoji --cache-folder .yarn_cache --mutex file:/usr/local/share/.yarn-mutex install'
+                },
+            },
         };
 
         grunt.initConfig(cfg);
+        grunt.registerTask('init', 'Install the client dependencies',
+            ['shell:yarn-install']
+        );
 
-        // ## Running the test suite
-        grunt.registerTask('validate', 'Run tests and lint code', ['jslint', 'mochacli']);
 
-        grunt.registerTask('default', 'Run tests and lint code', ['validate']);
     };
 
 module.exports = configureGrunt;
