@@ -48,5 +48,25 @@
     "matchdep": "~0.3.0",
     "should": "~2.0.2",
     "sinon": "~1.7.3"
+  },
+  "ghost": {
+    "permissions": {
+      "posts": [
+        "browse",
+        "read"
+      ],
+      "users": [
+        "browse",
+        "read"
+      ],
+      "tags": [
+        "browse",
+        "read"
+      ],
+      "categories": [
+        "browse",
+        "read"
+      ]
+    }
   }
 }
