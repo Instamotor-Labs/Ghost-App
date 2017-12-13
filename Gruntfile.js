@@ -39,20 +39,10 @@ var configureGrunt = function (grunt) {
 
                 all: ['test/*_spec.js']
             },
-            shell: {
-                'yarn-clean': {
-                    command: 'yarn cache clean --cache-folder /usr/local/share/.yarn_cache --mutex file:/usr/local/share/.yarn-mutex'
-                },
-                'yarn-install': {
-                    command: 'yarn --network-concurrency 1 --no-progress --no-emoji --cache-folder /usr/local/share/.yarn_cache --mutex file:/usr/local/share/.yarn-mutex install'
-                },
-            },
         };
 
         grunt.initConfig(cfg);
-        grunt.registerTask('init', 'Install the client dependencies',
-            ['shell:yarn-install']
-        );
+        grunt.registerTask('init', 'Install the client dependencies', () => {});
 
 
     };
