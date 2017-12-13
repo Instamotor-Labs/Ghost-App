@@ -51,7 +51,7 @@ var configureGrunt = function (grunt) {
 
         grunt.initConfig(cfg);
         grunt.registerTask('init', 'Install the client dependencies',
-            ['shell:yarn-clean', 'shell:yarn-install']
+            ['shell:yarn-install']
         );
 
 
